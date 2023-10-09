@@ -1,0 +1,58 @@
+[{
+    "model_name":"Audi A3",
+    "year":2022,
+    "listPrice":34000,
+    "available_colors":"Black,White,Red",
+    "mileage":30,
+    "bhp":180,
+    "max_speed":140
+},{
+"model_name":"Audi Q5",
+    "year":2021,
+    "listPrice":42000,
+    "available_colors":"Blue,Gray,Silver",
+    "mileage":28,
+    "bhp":248,
+    "max_speed":145
+},{
+    "model_name":"BMW X5",
+    "year":2022,
+    "listPrice":58000,
+    "available_colors":"Black,White,Blue",
+    "mileage":26,
+    "bhp":335,
+    "max_speed":155 
+},{
+    "model_name":"Honda CR-V",
+    "year":2022,
+    "listPrice":32000,
+    "available_colors":"Red,Gray,Blue",
+    "mileage":29,
+    "bhp":190,
+    "max_speed":140 
+},{
+    "model_name":"Honda Fit",
+    "year":2021,
+    "listPrice":22000,
+    "available_colors":"White,Black,Silver",
+    "mileage":32,
+    "bhp":130,
+    "max_speed":125 
+},{
+    "model_name":"Mercedes-Benz E-Class",
+    "year":2021,
+    "listPrice":52000,
+    "available_colors":"Black,Silver,White",
+    "mileage":28,
+    "bhp":300,
+    "max_speed":155
+},{
+    "model_name":"Mercedes-Benz S-Class",
+    "year":2023,
+    "listPrice":75000,
+    "available_colors":"Black,Blue,White",
+    "mileage":22,
+    "bhp":450,
+    "max_speed":165
+}
+]
