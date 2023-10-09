@@ -12,6 +12,11 @@ const inventorySchema = mongoose.Schema({
     accidents:Number,
     previous_buyer:Number,      
     registration_place:String,
+    dealer:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user',
+        required:true,
+    }
 });
 const inventoryModel = mongoose.model('MarketPlace_Inventory', inventorySchema);
 module.exports =inventoryModel;
