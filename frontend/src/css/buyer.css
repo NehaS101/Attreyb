@@ -49,7 +49,7 @@
   
   .inventory-card img {
     max-width: 100%;
-    height: auto;
+    height: 60%;
   }
   
   .inventory-card h3 {
@@ -105,19 +105,22 @@
     cursor: pointer;
   }
   
-  /* Styling for the View More modal */
+  /* /* Styling for the View More modal */
   .modal {
-    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    z-index: 1;
+    top: 20%;
+    left: 35%;
+    width: 40%;
+    height: auto;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
   }
-  .modal-content {
+  /* .modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -132,8 +135,8 @@
     padding: 8px 16px;
     cursor: pointer;
     float: right;
-    margin-top: 10px;
-  }
+    margin-top: 10px; */ 
+  /* } */
   
   /* Responsive styles */
   @media (max-width: 768px) {

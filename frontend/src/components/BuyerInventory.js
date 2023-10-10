@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom';
 import "../css/buyer.css";
 const BuyerInventory = () => {
   const [inventory, setInventory] = useState([]);
@@ -87,6 +88,7 @@ const BuyerInventory = () => {
   return (
     <div>
       <h2>Buyer Inventory</h2>
+      <Link to="/oem">OEM Specs Dashboard</Link>
       <div className="filters">
         <select
           value={priceOrder}
