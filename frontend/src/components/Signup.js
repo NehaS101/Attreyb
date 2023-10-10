@@ -1,37 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import logo from '../logo.png';
 
 const Signup = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [role, setRole] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const navigate = useNavigate();
 
   const handleSignup = async () => {
     // Make a POST request to your backend for signup
     try {
-      const response = await fetch('/api/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, email, password, role }),
-      });
+      const response = await fetch(
+        "https://busy-pink-chinchilla-shoe.cyclic.app/user/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, email, password, role }),
+        }
+      );
 
       if (response.ok) {
-        // Signup successful, you can redirect to the login page
-        console.log('Signup successful');
+        alert("Signup successful");
+        navigate('/');
       } else {
-        // Handle signup error (e.g., show an error message)
-        console.error('Signup failed');
+        alert("Signup failed");
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
   return (
     <div>
+        <h1>Welcome to BUYC Corp</h1>
+        <img className="image" src={logo} alt="logo" />
+        <div className="main">
       <h2>Signup</h2>
       <div>
         <input
@@ -65,8 +72,12 @@ const Signup = () => {
         </select>
       </div>
       <button onClick={handleSignup}>Signup</button>
-      <h4>Already Registered? <Link to ="/login">Login</Link> </h4>
+      <h4>
+        Already Registered? <Link to="/">Login</Link>{" "}
+      </h4>
     </div>
+    </div>
+   
   );
 };
 

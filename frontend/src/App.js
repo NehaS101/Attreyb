@@ -1,23 +1,28 @@
+import React, { useState } from 'react';
 import logo from "./logo.png";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import OemSpecs from "./components/Oem";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import DealerInventory from "./components/DealerInventory";
+import BuyerInventory from "./components/BuyerInventory";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Welcome to BUYC Corp</h1>
-        <img className="image" src={logo} alt="logo" />
-        <div className="Login">
+        
+        
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/dealer-inventory" element={<DealerInventory />} />
+          <Route path="/buyer-inventory" element={<BuyerInventory />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/oem" element= {<OemSpecs />} />
           {/* Add other routes as needed */}
         </Routes>
-        </div>
+        
         
       </div>
     </Router>
