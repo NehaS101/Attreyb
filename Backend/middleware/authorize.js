@@ -1,6 +1,8 @@
+//importing packages and middleware
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+//authorize middleware
 const authorize = (roles) => {
   return (req, res, next) => {
     try {
@@ -12,7 +14,6 @@ const authorize = (roles) => {
         });
       }
 
-      // If allowed, call the next middleware
       next();
     } catch (error) {
       res.status(500).send({
@@ -20,12 +21,8 @@ const authorize = (roles) => {
         message: "An error occurred.",
       });
     }
-  
-    
   };
 };
 
-
-
-
+//exporting authorize middleware
 module.exports = authorize;

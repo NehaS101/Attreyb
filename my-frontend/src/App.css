@@ -39,11 +39,6 @@ nav{
     text-align: center;
     margin: auto;
   }
-  /* .App {
-    text-align: center;
-    margin: auto;
-    
-  } */
   
   h2 {
     margin-bottom: 20px;
@@ -80,10 +75,6 @@ nav{
       animation: App-logo-spin infinite 20s linear;
     }
   }
-  
-  
-  
-  
   
   @keyframes App-logo-spin {
     from {

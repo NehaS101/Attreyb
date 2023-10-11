@@ -1,8 +1,11 @@
+//importing modules and packages
 const express = require('express');
 const oemModel = require('../models/oemSpecs_model');
 
+//Express Router
 const oemRouter = express.Router();
 
+//OEM Specifications creating route
 oemRouter.post('/create',async(req,res)=>{
     try {
         oemModel.create(req.body);
@@ -13,6 +16,7 @@ oemRouter.post('/create',async(req,res)=>{
 
 });
 
+//route for fetching OEM specifications
 oemRouter.get('/get',async(req,res)=>{
     try {
         let oemdata = await oemModel.find();
@@ -23,6 +27,7 @@ oemRouter.get('/get',async(req,res)=>{
 
 });
 
+//route for searching OEM specifications by model and year
 oemRouter.get('/search',async(req,res)=>{
     try {
         const {model,year} = req.query;
@@ -37,4 +42,5 @@ oemRouter.get('/search',async(req,res)=>{
     }
 });
 
+//exporting oemRouter
 module.exports = oemRouter

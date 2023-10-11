@@ -1,7 +1,9 @@
+//importing required image,packages,library
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import logo from '../logo.png';
 
+//signup component
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -9,8 +11,9 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const navigate = useNavigate();
 
+  //handle signup process
   const handleSignup = async () => {
-    // Make a POST request to your backend for signup
+    //POST request for signup
     try {
       const response = await fetch(
         "https://busy-pink-chinchilla-shoe.cyclic.app/user/signup",
@@ -73,7 +76,7 @@ const Signup = () => {
       </div>
       <button onClick={handleSignup}>Signup</button>
       <h4>
-        Already Registered? <Link to="/">Login</Link>{" "}
+        Already Registered? <Link to="/">Login</Link>
       </h4>
     </div>
     </div>

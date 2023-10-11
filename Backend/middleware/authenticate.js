@@ -1,7 +1,8 @@
+//importing modules and packages
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// Middleware to verify JWT tokens
+//authentication middleware
 const authenticate = (req, res, next) => {
   try {
     const token = req.header('Authorization');
@@ -9,6 +10,7 @@ const authenticate = (req, res, next) => {
       throw new Error('Unauthorized: Token not provided so Login First');
     }
 
+    //verifying token
     jwt.verify(token, process.env.key, (err, decoded) => {
       if (err) {
         if (err.name === 'TokenExpiredError') {
@@ -28,4 +30,6 @@ const authenticate = (req, res, next) => {
     res.status(401).json({ error: error.message });
   }
 };
+
+//exporting authenticate middleware
 module.exports = authenticate;

@@ -1,13 +1,9 @@
-/* BuyerInventory.css */
-
-/* Container styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Filter styles */
 .filters {
   display: flex;
   justify-content: space-between;
@@ -31,7 +27,6 @@ button {
   cursor: pointer;
 }
 
-/* Inventory card styles */
 .inventory-cards {
   display: flex;
   flex-wrap: wrap;
@@ -62,7 +57,6 @@ button {
   font-size: 16px;
 }
 
-/* Button styles */
 .inventory-card button {
   display: block;
   width: 100%;
@@ -76,7 +70,7 @@ button {
   margin-top: 10px;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .inventory-card {
     width: calc(50% - 20px);
@@ -89,7 +83,6 @@ button {
   }
 }
 
-/* Styling for the Buyer Inventory component */
 .inventory-container {
   display: flex;
   flex-wrap: wrap;
@@ -99,7 +92,7 @@ button {
 .inventory-card {
   border: 1px solid #ccc;
   padding: 15px;
-  width: calc(33.33% - 20px); /* Three cards per row */
+  width: calc(33.33% - 20px); 
   box-sizing: border-box;
 }
 
@@ -120,7 +113,6 @@ button {
   cursor: pointer;
 }
 
-/* Styling for the View More modal */
 .modal {
   display: flex;
   position: fixed;
@@ -152,13 +144,11 @@ button {
   margin-top: 10px;
 }
 
-/* Additional styling for modal content */
 .modal-content h3 {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* Add more styles for additional specifications if needed */
 .modal-content p {
   margin: 5px 0;
 }

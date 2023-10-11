@@ -1,9 +1,8 @@
+//importing react library
 import React,{useState,useEffect} from 'react';
-import {Link} from 'react-router-dom';
-import logo from '../logo.png';
-import styles from '../css/oem.css';
-const OemSpecs =()=>{
 
+//OemSpecs Component
+const OemSpecs =()=>{
   const [oemSpecs, setOemSpecs] = useState([]);
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');

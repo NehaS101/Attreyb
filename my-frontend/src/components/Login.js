@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from "react-router-dom";
-import logo from '../logo.png';
+import React, { useState } from 'react'; //importing react library
+import { useNavigate, Link } from "react-router-dom"; //importing package 
+import logo from '../logo.png';  //importing image
 
+//Login Component
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [userRole, setUserRole] = useState('');
 
+  //handle login process
   const handleLogin = async () => {
-    
+    //POST request for login
     try {
       const response = await fetch('https://busy-pink-chinchilla-shoe.cyclic.app/user/login', {
         method: 'POST',

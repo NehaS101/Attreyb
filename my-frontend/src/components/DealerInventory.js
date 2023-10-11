@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "../css/buyer.css";
+import React, { useState, useEffect } from "react";//importing react library
+import { Link } from "react-router-dom";//importing package
+import "../css/buyer.css";//importing styles
+
+//Dealer Inventory Component
 const DealerInventory = () => {
+  //state variables
   const [inventory, setInventory] = useState([]);
   const [selectedCars, setSelectedCars] = useState([]);
   const [newCar, setNewCar] = useState({
@@ -21,19 +24,13 @@ const DealerInventory = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedInventory, setSelectedInventory] = useState(null);
 
-
-  // Fetch dealer's inventory on component mount
   useEffect(() => {
-    // Fetch dealer's inventory using an API request
-    // You can implement this using the Fetch API or Axios
-
-    // Example Fetch API usage:
+   //GET request for inventory
     fetch("https://busy-pink-chinchilla-shoe.cyclic.app/inventory/get", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        // Include the authorization token if required
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((response) => response.json())
@@ -44,7 +41,7 @@ const DealerInventory = () => {
       .catch((error) => console.error("Error fetching inventory:", error));
   }, []);
 
-  // Function to handle selecting cars for deletion
+  //selecting cars for deletion
   const handleSelectCar = (carId) => {
     if (selectedCars.includes(carId)) {
       setSelectedCars(selectedCars.filter((id) => id !== carId));
@@ -53,13 +50,11 @@ const DealerInventory = () => {
     }
   };
 
-  // Function to handle deleting selected cars
+  //deleting function for selected cars
   const handleDeleteCars = () => {
-    // Send a request to delete selected cars using an API endpoint
-    // You can implement this using the Fetch API or Axios
     const data = { ids: selectedCars };
 
-    // Example Fetch API usage:
+    //DELETE request for delete selected cars
     fetch("https://busy-pink-chinchilla-shoe.cyclic.app/inventory/delete", {
       method: "DELETE",
       headers: {
@@ -85,27 +80,26 @@ const DealerInventory = () => {
       .catch((error) => console.error("Error deleting cars:", error));
   };
 
+  //handling view more button
   const handleViewMore = (item) => {
     setSelectedInventory(item);
     console.log(selectedInventory)
   };
 
-  // Function to close the "View More" modal
+  //handling to close the "View More" 
   const handleCloseViewMore = () => {
     setSelectedInventory(null);
   };
-  // Function to handle adding a new car to inventory
+
+  // Function to handle add a new car 
   const handleAddCar = () => {
-    // Send a request to add a new car to inventory using an API endpoint
-    // You can implement this using the Fetch API or Axios
     const data = { ...newCar };
 
-    // Example Fetch API usage:
+    // POST request to add a new car
     fetch("https://busy-pink-chinchilla-shoe.cyclic.app/inventory/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Include the authorization token if required
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(data),

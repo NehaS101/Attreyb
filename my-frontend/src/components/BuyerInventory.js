@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom';
-import "../css/buyer.css";
+import React, { useState, useEffect } from "react"; //importing react library
+import {Link} from 'react-router-dom'; //importing package
+import "../css/buyer.css";//importing styles
+
+//Buyer Inventory Component
 const BuyerInventory = () => {
+  //state variables
   const [inventory, setInventory] = useState([]);
   const [filteredInventory, setFilteredInventory] = useState([]);
   const [priceOrder, setPriceOrder] = useState(""); // HTL or LTH
@@ -10,8 +13,8 @@ const BuyerInventory = () => {
   const [maxMileage, setMaxMileage] = useState("");
   const [selectedInventory, setSelectedInventory] = useState(null);
 
-  // Fetch all inventory data
   useEffect(() => {
+    //fetching inventory data
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -80,7 +83,7 @@ const BuyerInventory = () => {
     console.log(selectedInventory)
   };
 
-  // Function to close the "View More" modal
+  // Function to close the "View More" 
   const handleCloseViewMore = () => {
     setSelectedInventory(null);
   };
